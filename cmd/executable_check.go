@@ -23,9 +23,7 @@ import (
 
 var validExecutables = map[string]bool{
 	"curl":  true,
-	"wget":  true,
 	"tar":   true,
-	"git":   true,
 	"xz":    true,
 	"unzip": true,
 }
@@ -44,9 +42,7 @@ var executableCmd = &cobra.Command{
 	Short: "Check for executable/executables required to install DC/OS",
 	Long: `Check for existence of the following executable: 
 curl
-wget
 tar
-git
 xz
 unzip
 `,
