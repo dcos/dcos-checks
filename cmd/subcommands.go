@@ -6,6 +6,7 @@ import (
 	"github.com/dcos/dcos-checks/cmd/checks/ip"
 	"github.com/dcos/dcos-checks/cmd/checks/journald"
 	"github.com/dcos/dcos-checks/cmd/checks/mesosmetrics"
+	"github.com/dcos/dcos-checks/cmd/checks/portavailability"
 	"github.com/dcos/dcos-checks/cmd/checks/time"
 	"github.com/dcos/dcos-checks/cmd/checks/version"
 )
@@ -19,4 +20,5 @@ func addSubcommands() {
 	mesosmetrics.Add(rootCmd)
 	time.Add(rootCmd)
 	version.Add(rootCmd)
+	portavailability.Add(rootCmd)
 }
