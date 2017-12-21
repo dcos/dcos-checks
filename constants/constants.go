@@ -32,8 +32,8 @@ const (
 	// HTTP requests.
 	MarathonMasterHTTPPort = 8080
 
-	// MarathonMasterHTTPPort is the port on which the Marathon master listens for
-	// HTTP requests.
+	// MarathonMasterHTTPSPort is the port on which the Marathon master listens for
+	// HTTPS requests.
 	MarathonMasterHTTPSPort = 8443
 
 	// MesosMasterHTTPPort is the port on which the Mesos master listens for
