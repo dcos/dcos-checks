@@ -28,6 +28,14 @@ const (
 	// listens for HTTPS requests
 	AdminrouterAgentHTTPSPort = 61002
 
+	// MarathonMasterHTTPPort is the port on which the Marathon master listens for
+	// HTTP requests.
+	MarathonMasterHTTPPort = 8080
+
+	// MarathonMasterHTTPSPort is the port on which the Marathon master listens for
+	// HTTPS requests.
+	MarathonMasterHTTPSPort = 8443
+
 	// MesosMasterHTTPPort is the port on which the Mesos master listens for
 	// HTTP requests.
 	MesosMasterHTTPPort = 5050
