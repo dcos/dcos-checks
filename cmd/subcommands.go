@@ -1,6 +1,7 @@
 package cmd
 
 import (
+	"github.com/dcos/dcos-checks/cmd/checks/cockroachdb"
 	"github.com/dcos/dcos-checks/cmd/checks/components"
 	"github.com/dcos/dcos-checks/cmd/checks/executable"
 	"github.com/dcos/dcos-checks/cmd/checks/ip"
@@ -27,4 +28,5 @@ func addSubcommands() {
 	RegisterSubcommand(mesosmetrics.Register)
 	RegisterSubcommand(time.Register)
 	RegisterSubcommand(version.Register)
+	RegisterSubcommand(cockroachdb.Register)
 }
