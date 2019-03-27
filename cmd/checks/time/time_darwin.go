@@ -17,7 +17,7 @@ package time
 
 import "github.com/spf13/cobra"
 
-// Add doesn't add this check on darwin b/c it's not supported
-func Add(root *cobra.Command) {
+// Register doesn't add this check on darwin b/c it's not supported
+func Register(root *cobra.Command) {
 	// does nothing on darwin
 }
