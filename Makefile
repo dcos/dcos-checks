@@ -12,7 +12,7 @@ $(BUILDDIR)/dcos-checks: docker $(shell find "$(CURRDIR)" -name "*.go")
 			   -w /dcos-checks \
 			   --rm \
 			   dcos/dcos-checks-test \
-			   bash -c "go build -mod=vendor -o $(@) ."
+			   go build -mod=vendor -o $(@) .
 
 test: $(BUILDDIR)/dcos-checks
 	docker run -v $(CURRDIR):$(PKGDIR)/dcos-checks \
@@ -20,7 +20,7 @@ test: $(BUILDDIR)/dcos-checks
 			   --rm \
 			   --privileged \
 			   dcos/dcos-checks-test \
-			   bash -c "./script/test.sh unit"
+			   ./script/test.sh unit
 
 docker:
 	docker build --rm --force-rm -f Dockerfile -t dcos/dcos-checks-test .
