@@ -2,18 +2,17 @@
 
 CURRDIR=$(shell pwd)
 BUILDDIR=$(CURRDIR)/build
-PKGDIR=/go/src/github.com/dcos
 
 all: $(BUILDDIR)/dcos-checks
 
 $(BUILDDIR)/dcos-checks: docker $(shell find "$(CURRDIR)" -name "*.go")
 	mkdir -p $(BUILDDIR)
 	docker run -v $(BUILDDIR):$(BUILDDIR) \
-			   -v $(CURRDIR):$(PKGDIR)/dcos-checks \
-			   -w $(PKGDIR)/dcos-checks \
+			   -v $(CURRDIR):/dcos-checks \
+			   -w /dcos-checks \
 			   --rm \
 			   dcos/dcos-checks-test \
-			   bash -c "go build -o $(@) ."
+			   bash -c "go build -mod=vendor -o $(@) ."
 
 test: $(BUILDDIR)/dcos-checks
 	docker run -v $(CURRDIR):$(PKGDIR)/dcos-checks \
