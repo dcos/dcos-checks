@@ -79,7 +79,7 @@ func (c *executableCheck) executableExists(ctx context.Context, cfg *common.CLIC
 		return fmt.Errorf("Only one executable allowed at a time")
 	}
 
-	_, _, exitCode, err := exec.FullOutput(exec.CommandContext(ctx, "bash", "-c", fmt.Sprintf("command -v %s", args[0])))
+	_, _, exitCode, err := exec.FullOutput(exec.CommandContext(ctx, "bash", "-c", fmt.Sprintf("command -v -p %s", args[0])))
 	if err != nil {
 		return fmt.Errorf("ERROR: Unable to determine whether %s is available", args[0])
 	}
