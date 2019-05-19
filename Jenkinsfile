@@ -4,6 +4,7 @@ pipeline {
             label 'mesos-ubuntu'
         }
     }
+
     stages {
         stage('test') {
             steps {
